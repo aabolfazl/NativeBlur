@@ -7,20 +7,26 @@ import android.graphics.Rect
 import kotlin.math.roundToInt
 
 object NativeBlur {
-    private var inited: Boolean = false
+    private const val SUCCESS = 1
+    private const val INVALID_RADIUS = -1
+    private const val CAN_NOT_GET_BITMAP_INFO = -2
+    private const val INVALID_BITMAP_FORMAT = -3
+    private const val BITMAP_CONCURRENCY_ERROR = -4
+
+    private var initialized: Boolean = false
     private const val LIBRARY_NAME: String = "blurlib"
 
     init {
         try {
             System.loadLibrary(LIBRARY_NAME)
-            inited = true
+            initialized = true
         } catch (e: Exception) {
             Logger.error(e)
         }
     }
 
     fun blurBitmap(sourceBitmap: Bitmap, radius: Int = 10, compress: Boolean = true): Bitmap? {
-        if (!inited) {
+        if (!initialized) {
             Logger.error("First init lib.")
             return null
         }
@@ -62,19 +68,19 @@ object NativeBlur {
     private fun logResult(result: Int, startTime: Long, radius: Int, compress: Boolean) {
         val endTime = System.currentTimeMillis()
         when (result) {
-            1 -> {
+            SUCCESS -> {
                 Logger.info("Blur has done successfully with radios:$radius at:${endTime - startTime}ms in compress:$compress")
             }
-            -1 -> {
+            INVALID_RADIUS -> {
                 Logger.error("INVALID_RADIUS $radius")
             }
-            -2 -> {
+            CAN_NOT_GET_BITMAP_INFO -> {
                 Logger.error("CAN_NOT_GET_BITMAP_INFO")
             }
-            -3 -> {
+            INVALID_BITMAP_FORMAT -> {
                 Logger.error("INVALID_BITMAP_FORMAT ARG888")
             }
-            -4 -> {
+            BITMAP_CONCURRENCY_ERROR -> {
                 Logger.error("BITMAP_CONCURRENCY_ERROR")
             }
         }
