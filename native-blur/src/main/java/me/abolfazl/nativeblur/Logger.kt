@@ -17,4 +17,10 @@ object Logger {
             Log.e(TAG, "error: ", e)
         }
     }
+
+    fun error(msg: String) {
+        if (BuildConfig.DEBUG) {
+            Log.e(TAG, "error: $msg")
+        }
+    }
 }
