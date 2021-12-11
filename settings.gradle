@@ -8,3 +8,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "Native Blur Sample"
 include ':app'
+include ':native-blur'
