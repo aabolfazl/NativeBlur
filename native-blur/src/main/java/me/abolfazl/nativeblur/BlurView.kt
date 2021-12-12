@@ -10,6 +10,8 @@ class BlurView : AppCompatImageView {
     private var compress: Boolean = true
     private var lastRadius: Int = 0
     private var renderingBitmap: Bitmap? = null
+    private var originalBitmap: Bitmap? = null
+
     var radius: Int = 14
         set(value) {
             field = value
@@ -45,7 +47,7 @@ class BlurView : AppCompatImageView {
 
     private fun init() {
         if (drawable != null && drawable is BitmapDrawable) {
-            renderingBitmap = (drawable as BitmapDrawable).bitmap
+            originalBitmap = (drawable as BitmapDrawable).bitmap
         }
 
         setBlurIfChanged()
@@ -56,11 +58,20 @@ class BlurView : AppCompatImageView {
             return
         }
 
-        renderingBitmap?.let { bitmap ->
-            val blurBitmap = NativeBlur.blurBitmap(bitmap, radius, compress)
-            setImageDrawable(BitmapDrawable(blurBitmap))
-            lastRadius = radius
+        originalBitmap?.let { bitmap ->
+            if (radius < 1) {
+                setImageDrawable(BitmapDrawable(bitmap))
+            } else {
+                if (renderingBitmap == null) {
+                    renderingBitmap = bitmap
+                }
+
+                val blurBitmap = NativeBlur.blurBitmap(renderingBitmap!!, radius, compress)
+                setImageDrawable(BitmapDrawable(blurBitmap))
+            }
         }
+
+        lastRadius = radius
     }
 
 }
