@@ -64,6 +64,11 @@ dependencies {
 ## Images
 <img src="https://github.com/aabolfazl/Native-Blur/blob/main/images/shot1.jpg?raw=true" width=250 title="Shot"> <img src="https://github.com/aabolfazl/Native-Blur/blob/main/images/shot2.jpg?raw=true" width=250 title="Shot"> <img src="https://github.com/aabolfazl/Native-Blur/blob/main/images/shot3.jpg?raw=true" width=250 title="Shot">
 
+## benchmark
+Memory allocation and Heap limit size for an application(in Java program throws an exception but in C++ done successfully)
+
+<img src="https://github.com/aabolfazl/Native-Blur/blob/main/images/shot4.jpg?raw=true" width=700 title="Shot">
+
 ## Developed by
 
 - Abolfazl Abbasi [@0x40x4](https://twitter.com/0x40x4)
