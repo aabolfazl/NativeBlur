@@ -18,6 +18,19 @@
         app:titleTextColor="@color/white" />
 
     <Button
+        android:id="@+id/staticBlur"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:text="Static Image"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <Button
         android:id="@+id/seekbarActivityButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -31,17 +44,17 @@
         app:layout_constraintTop_toBottomOf="@+id/staticBlur" />
 
     <Button
-        android:id="@+id/staticBlur"
+        android:id="@+id/blurActivity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:text="Static Image"
+        android:text="Blur background"
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/seekbarActivityButton" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
