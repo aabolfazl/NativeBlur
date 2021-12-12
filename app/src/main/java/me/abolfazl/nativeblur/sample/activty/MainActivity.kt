@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity() {
                 .setMessage("The background blurred :)")
                 .setPositiveButton("Just close dialog") { dialog, _ -> dialog.dismiss() }
                 .setNeutralButton("Close and Hide Blur") { _, _ -> overlayBlurView.hide() }
+                .show()
 
             overlayBlurView.show()
         }
