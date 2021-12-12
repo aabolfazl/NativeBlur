@@ -67,7 +67,7 @@ dependencies {
 ## benchmark
 Memory allocation and Heap limit size for an application(in Java program throws an exception but in C++ done successfully)
 
-<img src="https://github.com/aabolfazl/Native-Blur/blob/main/images/shot4.jpg?raw=true" width=700 title="Shot">
+<img src="https://github.com/aabolfazl/Native-Blur/blob/main/images/shot4.png?raw=true" width=700 title="Shot">
 
 ## Developed by
 
