@@ -1,5 +1,3 @@
-[![](https://jitpack.io/v/aabolfazl/Native-Blur.svg)](https://jitpack.io/#aabolfazl/Native-Blur)
-
 # Native-Blur
 
 The Native-Blur is a C++/Kotlin libraray for blur bitmaps and activity, mobile-ready, android
