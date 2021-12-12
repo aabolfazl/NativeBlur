@@ -14,5 +14,9 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, SeekbarActivity::class.java))
         }
 
+        staticBlur.setOnClickListener {
+            startActivity(Intent(this, StaticActivity::class.java))
+        }
+
     }
 }
