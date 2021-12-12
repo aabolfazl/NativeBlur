@@ -10,10 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NativeBlurSample">
         <activity
-            android:name=".StaticActivity"
+            android:name=".activty.StaticActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activty.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SeekbarActivity"
+            android:name=".activty.SeekbarActivity"
             android:exported="false" />
     </application>
 

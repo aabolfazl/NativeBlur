@@ -1,3 +1,9 @@
+/*
+*
+* Copyright (c) 2021 Abolfazl Abbasi
+*
+* */
+
 package me.abolfazl.nativeblur
 
 import android.graphics.Bitmap
@@ -25,6 +31,14 @@ object NativeBlur {
         }
     }
 
+    /**
+     * Returns a blurred bitmap with the specified radius and compress. Its
+     * call native C++ method
+     *
+     * @param sourceBitmap    The source bitmap must blurred
+     * @param radius   The radius of the blur grate than 1
+     * @param compress   The compress config to return
+     */
     fun blurBitmap(sourceBitmap: Bitmap, radius: Int = 10, compress: Boolean = true): Bitmap? {
         if (!initialized) {
             Logger.error("First init lib.")
@@ -65,11 +79,15 @@ object NativeBlur {
         return if (result == 1) finalBitmap else null
     }
 
+    /**
+     * Log native JNI native call result in DEBUG
+     * build config
+     */
     private fun logResult(result: Int, startTime: Long, radius: Int, compress: Boolean) {
         val endTime = System.currentTimeMillis()
         when (result) {
             SUCCESS -> {
-                Logger.info("Blur has done successfully with radios:$radius at:${endTime - startTime}ms in compress:$compress")
+                Logger.info("Blur has done successfully with radius:$radius at:${endTime - startTime}ms in compress:$compress")
             }
             INVALID_RADIUS -> {
                 Logger.error("INVALID_RADIUS $radius")
@@ -86,6 +104,13 @@ object NativeBlur {
         }
     }
 
+    /**
+     * This native JNI method call for Stack Blur.
+     * returns the blur Bitmap result in int.  Note that
+     * while the unit of time of the return value is a error,
+     *
+     * @return Int result
+     */
     private external fun fastBlurAlpha(bitmap: Bitmap, radius: Int): Int
 
 }

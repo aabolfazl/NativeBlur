@@ -1,6 +1,8 @@
-//
-// Created by AbolfazlAbbasi on 12/11/21.
-//
+/*
+*
+* Copyright (c) 2021 Abolfazl Abbasi
+*
+* */
 
 #ifndef NATIVE_BLUR_SAMPLE_NATIVEBLUR_H
 #define NATIVE_BLUR_SAMPLE_NATIVEBLUR_H

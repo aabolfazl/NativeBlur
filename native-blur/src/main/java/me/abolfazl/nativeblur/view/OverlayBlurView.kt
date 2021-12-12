@@ -1,4 +1,10 @@
-package me.abolfazl.nativeblur
+/*
+*
+* Copyright (c) 2021 Abolfazl Abbasi
+*
+* */
+
+package me.abolfazl.nativeblur.view
 
 import android.app.Activity
 import android.graphics.Bitmap
@@ -8,6 +14,8 @@ import android.view.View
 import android.view.View.OnClickListener
 import android.view.ViewGroup
 import android.view.ViewTreeObserver.OnGlobalLayoutListener
+import me.abolfazl.nativeblur.Logger
+import me.abolfazl.nativeblur.NativeBlur
 import java.lang.ref.WeakReference
 
 class OverlayBlurView(parentActivity: Activity?, show: Boolean = false) {
@@ -80,7 +88,7 @@ class OverlayBlurView(parentActivity: Activity?, show: Boolean = false) {
             canvas.scale(1.0f / 5.0f, 1.0f / 5.0f)
             rootView.draw(canvas)
             NativeBlur.blurBitmap(
-                bitmap, 8.coerceAtLeast(w.coerceAtLeast(h) / 180)
+                bitmap, 6.coerceAtLeast(w.coerceAtLeast(h) / 180), false
             )
 
             blurredView = View(rootView.context).also {

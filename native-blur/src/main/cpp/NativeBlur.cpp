@@ -1,8 +1,8 @@
-//
-// Created by Abolfazl Abbasi on 12/11/21.
-// Stack Blur Algorithm by Mario Klingemann <mario@quasimondo.com>
-// Ported algorithm by Telegram
-//
+/*
+* Copyright (c) 2021 Abolfazl Abbasi
+* Stack Blur Algorithm by Mario Klingemann <mario@quasimondo.com>
+* Ported algorithm by Telegram
+* */
 
 #include "NativeBlur.h"
 

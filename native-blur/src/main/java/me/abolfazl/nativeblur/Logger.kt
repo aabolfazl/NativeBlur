@@ -1,10 +1,16 @@
+/*
+*
+* Copyright (c) 2021 Abolfazl Abbasi
+*
+* */
+
 package me.abolfazl.nativeblur
 
 import android.util.Log
 
 object Logger {
 
-    private val TAG: String = "NativeBlur"
+    private const val TAG: String = "NativeBlurLog"
 
     fun info(msg: String) {
         if (BuildConfig.DEBUG) {

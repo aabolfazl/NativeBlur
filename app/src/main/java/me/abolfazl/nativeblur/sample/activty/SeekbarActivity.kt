@@ -1,9 +1,10 @@
-package me.abolfazl.nativeblur.sample
+package me.abolfazl.nativeblur.sample.activty
 
 import android.os.Bundle
 import android.widget.SeekBar
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_seekbar.*
+import me.abolfazl.nativeblur.sample.R
 
 class SeekbarActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

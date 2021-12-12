@@ -1,10 +1,18 @@
-package me.abolfazl.nativeblur
+/*
+*
+* Copyright (c) 2021 Abolfazl Abbasi
+*
+* */
+
+package me.abolfazl.nativeblur.view
 
 import android.content.Context
 import android.graphics.Bitmap
 import android.graphics.drawable.BitmapDrawable
 import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatImageView
+import me.abolfazl.nativeblur.NativeBlur
+import me.abolfazl.nativeblur.R
 
 class BlurView : AppCompatImageView {
     private var compress: Boolean = true

@@ -1,10 +1,11 @@
-package me.abolfazl.nativeblur.sample
+package me.abolfazl.nativeblur.sample.activty
 
 import android.graphics.BitmapFactory
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_static.*
 import me.abolfazl.nativeblur.NativeBlur
+import me.abolfazl.nativeblur.sample.R
 
 class StaticActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

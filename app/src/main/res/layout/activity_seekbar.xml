@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activty.MainActivity">
 
-    <me.abolfazl.nativeblur.BlurView
+    <me.abolfazl.nativeblur.view.BlurView
         android:id="@+id/blurView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
