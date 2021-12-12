@@ -62,13 +62,13 @@ dependencies {
 }
 ```
 ## Images
-<img src="./images/shot1.jpg" width=250 title="Shot"> <img src="./images/shot2.jpg" width=250 title="Shot"> <img src="./images/shot3.jpg" width=250 title="Shot">
+<img src="https://github.com/aabolfazl/Native-Blur/blob/main/images/shot1.jpg?raw=true" width=250 title="Shot"> <img src="https://github.com/aabolfazl/Native-Blur/blob/main/images/shot2.jpg?raw=true" width=250 title="Shot"> <img src="https://github.com/aabolfazl/Native-Blur/blob/main/images/shot3.jpg?raw=true" width=250 title="Shot">
 
-## Developed By
+## Developed by
 
 - Abolfazl Abbasi [@0x40x4](https://twitter.com/0x40x4)
 
-## Refrences
+## Reference
 - Stack Blur Algorithm by Mario Klingemann
 - Telegram open source project
 
