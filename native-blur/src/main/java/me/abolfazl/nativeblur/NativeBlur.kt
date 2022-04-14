@@ -10,6 +10,7 @@ import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.Paint
 import android.graphics.Rect
+import me.abolfazl.nativeblur.JNIWrapper.fastBlurAlpha
 import kotlin.math.roundToInt
 
 object NativeBlur {
@@ -18,18 +19,6 @@ object NativeBlur {
     private const val CAN_NOT_GET_BITMAP_INFO = -2
     private const val INVALID_BITMAP_FORMAT = -3
     private const val BITMAP_CONCURRENCY_ERROR = -4
-
-    private var initialized: Boolean = false
-    private const val LIBRARY_NAME: String = "blurlib"
-
-    init {
-        try {
-            System.loadLibrary(LIBRARY_NAME)
-            initialized = true
-        } catch (e: Exception) {
-            Logger.error(e)
-        }
-    }
 
     /**
      * Returns a blurred bitmap with the specified radius and compress. Its
@@ -40,10 +29,6 @@ object NativeBlur {
      * @param compress   The compress config to return
      */
     fun blurBitmap(sourceBitmap: Bitmap, radius: Int = 10, compress: Boolean = true): Bitmap? {
-        if (!initialized) {
-            Logger.error("First init lib.")
-            return null
-        }
         val startTime = System.currentTimeMillis()
         val result: Int
         val finalBitmap: Bitmap
@@ -103,14 +88,4 @@ object NativeBlur {
             }
         }
     }
-
-    /**
-     * This native JNI method call for Stack Blur.
-     * returns the blur Bitmap result in int.  Note that
-     * while the unit of time of the return value is a error,
-     *
-     * @return Int result
-     */
-    private external fun fastBlurAlpha(bitmap: Bitmap, radius: Int): Int
-
 }

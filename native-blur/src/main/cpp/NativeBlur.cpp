@@ -8,8 +8,11 @@
 
 extern "C" {
 JNIEXPORT jint
-Java_me_abolfazl_nativeblur_NativeBlur_fastBlurAlpha(JNIEnv *env, jobject clazz, jobject bitmap,
-                                                     jint radius) {
+Java_me_abolfazl_nativeblur_JNIWrapper_fastBlurAlpha(
+        JNIEnv *env,
+        jobject clazz,
+        jobject bitmap,
+        jint radius) {
     if (radius < 1) {
         return INVALID_RADIUS;
     }
